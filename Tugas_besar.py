@@ -187,7 +187,53 @@ def metode_pengiriman():
         elif KodePengiriman == 2:
             print("Anda akan dihubungi oleh kurir Gosend")
 
+metode_pembayaran()
+        else:
+            print("Maaf metode pengiriman belum tersedia.")
+            metode_pengiriman()
 
+
+def metode_pembayaran():
+    print("\n--------------------------------------------------")
+    print("Silahkan memilih metode pembayaran yang tersedia.")
+    print(" Kode | Metode Pembayaran  ")
+    print("--------------------------------------------------")
+    print(" 1    | BCA                ")
+    print(" 2    | GoPay              ")
+    KodePembayaran = int(input("Masukkan kode metode pembayaran : "))
+    if KodePembayaran == 1:
+        print("Silahkan transfer ke 0329009779")
+        akhir()
+    elif KodePembayaran == 2:
+        print("Silahkan transfer ke 0825333123")
+        akhir()
+    else:
+        print("Maaf metode pembayaran belum tersedia.")
+        KodeBayar = int(input("Anda harus memilih antara 1/2 : "))
+        if KodeBayar == 1:
+            print("Silahkan transfer ke 0329009779")
+            akhir()
+        elif KodeBayar == 2:
+            print("Silahkan transfer ke 0825333123")
+            akhir()
+        else:
+            print("Maaf metode pembayaran belum tersedia.")
+            metode_pembayaran()
+
+
+def akhir():
+    print("\n\n-------------------------------------")
+    print("=====================================")
+    print("         PROGRAM FRESH MART          ")
+    print("=====================================")
+    print("     Detail Informasi Pembelian      ")
+    print()
+    print("Nama                 : ", nama)
+    print("No hp                : ", no_hp)
+    print("Alamat Pengiriman    : ", alamat)
+    print()
+
+daftar_barang()
 
 
 
