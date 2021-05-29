@@ -45,3 +45,53 @@ def daftar_barang():
             JumlahKentang = int(input("Masukkan jumlah kentang (kg) : "))
             TotalKentang = 18000 * JumlahKentang
             total.append(TotalKentang)
+            tanya()
+        elif KodeSayur == 3:
+            JumlahBawangbomay = int(input("Masukkan jumlah bawang bombay (kg) : "))
+            TotalBawangbombay = 28000 * JumlahBawangbomay
+            total.append(TotalBawangbombay)
+            tanya()
+    elif kode == 2:
+        print()
+        print("Silahkan pilih buah yang Anda inginkan!")
+        print(" Kode | Nama Buah   | Harga ")
+        print("--------------------------------------------------")
+        print(" 1    | Apel        | 40000")
+        print(" 2    | Jeruk       | 15000")
+        print(" 3    | Mangga      | 30000")
+        KodeBuah = int(input("Masukkan kode buah: "))
+        if KodeBuah == 1:
+            JumlahApel = int(input("Masukkan jumlah apel (kg) : "))
+            TotalApel = 40000 * JumlahApel
+            total.append(TotalApel)
+            tanya()
+        elif KodeBuah == 2:
+            JumlahJeruk = int(input("Masukkan jumlah jeruk (kg) : "))
+            TotalJeruk = 15000 * JumlahJeruk
+            total.append(TotalJeruk)
+            tanya()
+        elif KodeBuah == 3:
+            JumlahMangga = int(input("Masukkan jumlah mangga (kg) : "))
+            TotalMangga = 30000 * JumlahMangga
+            total.append(TotalMangga)
+            tanya()
+    elif kode == 3:
+        print()
+        print("Silahkan pilih ikan yang Anda inginkan!")
+        print(" Kode | Nama Ikan   | Harga ")
+        print("--------------------------------------------------")
+        print(" 1    | Ikan Gurame | 60000")
+        print(" 2    | Ikan Nila   | 27000")
+        print(" 3    | Ikan Kakap  | 90000")
+        KodeIkan = int(input("Masukkan kode ikan: "))
+        if KodeIkan == 1:
+            JumlahIkanGurame = int(input("Masukkan jumlah Ikan Gurame (kg) : "))
+            TotalIkanGurame = 60000 * JumlahIkanGurame
+            total.append(TotalIkanGurame)
+            tanya()
+        elif KodeIkan == 2:
+            JumlahIkanNila = int(input("Masukkan jumlah Ikan Nila (kg) : "))
+            TotalIkanNila = 27000 * JumlahIkanNila
+
+
+
