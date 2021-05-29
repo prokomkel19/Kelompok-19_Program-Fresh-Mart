@@ -139,6 +139,53 @@ def daftar_barang():
         elif KodeSembako == 2:
             JumlahTelur = int(input("Masukkan jumlah Telur (kg) : "))
             TotalTelur = 28000 * JumlahTelur
+            total.append(TotalTelur)
+            tanya()
+            return
+
+
+def tanya():
+    print("\n--------------------------------------------------")
+    tanya = input("Ingin tambah barang? [y/t] : ")
+    print("--------------------------------------------------")
+    if tanya == "y":
+        daftar_barang()
+    elif tanya == "t":
+        harga()
+    else:
+        print("Pilihan yang anda masukan salah!")
+        print(input("Anda harus memilih antara y/t : "))
+
+
+def harga():
+    print("\n")
+    harga = sum(total)
+    print("Total pembelian :", harga)
+    metode_pengiriman()
+
+
+def metode_pengiriman():
+    print("\n--------------------------------------------------")
+    print("Silahkan memilih metode pengiriman yang tersedia.")
+    print(" Kode | Metode Pengiriman ")
+    print("--------------------------------------------------")
+    print(" 1    | Paxel             ")
+    print(" 2    | Gosend            ")
+    KodePengiriman = int(input("Masukkan kode metode pengiriman : "))
+    if KodePengiriman == 1:
+        print("Anda akan dihubungi oleh kurir Paxel")
+        metode_pembayaran()
+    elif KodePengiriman == 2:
+        print("Anda akan dihubungi oleh kurir Gosend")
+        metode_pembayaran()
+    else:
+        print("Maaf metode pengiriman belum tersedia.")
+        KodeKirim = int(input("Anda harus memilih antara 1/2 : "))
+        if KodeKirim == 1:
+            print("Anda akan dihubungi oleh kurir Paxel")
+            metode_pembayaran()
+        elif KodePengiriman == 2:
+            print("Anda akan dihubungi oleh kurir Gosend")
 
 
 
