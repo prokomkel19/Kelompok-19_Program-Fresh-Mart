@@ -92,6 +92,53 @@ def daftar_barang():
         elif KodeIkan == 2:
             JumlahIkanNila = int(input("Masukkan jumlah Ikan Nila (kg) : "))
             TotalIkanNila = 27000 * JumlahIkanNila
+            total.append(TotalIkanNila)
+            tanya()
+        elif KodeIkan == 3:
+            JumlahIkanKakap = int(input("Masukkan jumlah Ikan Kakap (kg) : "))
+            TotalIkanKakap = 90000 * JumlahIkanKakap
+            total.append(TotalIkanKakap)
+            tanya()
+    elif kode == 4:
+        print()
+        print("Silahkan pilih ayam yang Anda inginkan!")
+        print(" Kode | Nama Ayam     | Harga ")
+        print("--------------------------------------------------")
+        print(" 1    | Ayam Pejantan | 40000")
+        print(" 2    | Ayam Boiler   | 35000")
+        print(" 3    | Ayam Kampung  | 45000")
+        KodeAyam = int(input("Masukkan kode ayam: "))
+        if KodeAyam == 1:
+            JumlahAyamPejantan = int(input("Masukkan jumlah Ayam Pejantan (kg) : "))
+            TotalAyamPejantan = 40000 * JumlahAyamPejantan
+            total.append(TotalAyamPejantan)
+            tanya()
+        elif KodeAyam == 2:
+            JumlahAyamBoiler = int(input("Masukkan jumlah Ayam Boiler (kg) : "))
+            TotalAyamBoiler = 35000 * JumlahAyamBoiler
+            total.append(TotalAyamBoiler)
+            tanya()
+        elif KodeAyam == 3:
+            JumlahAyamKampung = int(input("Masukkan jumlah Ayam Kampung (kg) : "))
+            TotalAyamKampung = 45000 * JumlahAyamKampung
+            total.append(TotalAyamKampung)
+            tanya()
+    elif kode == 5:
+        print()
+        print("Silahkan pilih sembako yang Anda inginkan!")
+        print(" Kode | Nama Sembako  | Harga ")
+        print("--------------------------------------------------")
+        print(" 1    | Beras         | 10500")
+        print(" 2    | Telur         | 28000")
+        KodeSembako = int(input("Masukkan kode sembako: "))
+        if KodeSembako == 1:
+            JumlahBeras = int(input("Masukkan jumlah Beras (kg) : "))
+            TotalBeras = 10500 * JumlahBeras
+            total.append(TotalBeras)
+            tanya()
+        elif KodeSembako == 2:
+            JumlahTelur = int(input("Masukkan jumlah Telur (kg) : "))
+            TotalTelur = 28000 * JumlahTelur
 
 
 
