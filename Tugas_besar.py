@@ -186,8 +186,7 @@ def metode_pengiriman():
             metode_pembayaran()
         elif KodePengiriman == 2:
             print("Anda akan dihubungi oleh kurir Gosend")
-
-metode_pembayaran()
+            metode_pembayaran()
         else:
             print("Maaf metode pengiriman belum tersedia.")
             metode_pengiriman()
@@ -234,6 +233,7 @@ def akhir():
     print()
 
 daftar_barang()
+
 
 
 
