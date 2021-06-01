@@ -12,6 +12,8 @@ print("Selamat berbelanja di Fresh Mart.")
 print("Mohon isi data di bawah ini.")
 nama = input("Nama     : ")
 no_hp = input("No hp    : ")
+if len(no_hp) != 10 and len(no_hp) !=11:
+    print("Maaf nomor handphone yang Anda masukkan tidak terdaftar.")
 alamat = input("Alamat   : ")
 print("\n--------------------------------------------------")
 
