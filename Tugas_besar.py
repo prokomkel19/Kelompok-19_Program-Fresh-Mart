@@ -15,7 +15,6 @@ no_hp = input("No hp    : ")
 alamat = input("Alamat   : ")
 print("\n--------------------------------------------------")
 
-
 def daftar_barang():
     print("Berikut barang yang tersedia di toko Fresh Mart")
     print(" Kode | Nama Barang ")
