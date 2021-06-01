@@ -51,6 +51,8 @@ def daftar_barang():
             TotalBawangbombay = 28000 * JumlahBawangbomay
             total.append(TotalBawangbombay)
             tanya()
+        else:
+            print("Maaf sayur belum tersedia.")
     elif kode == 2:
         print()
         print("Silahkan pilih buah yang Anda inginkan!")
@@ -75,6 +77,8 @@ def daftar_barang():
             TotalMangga = 30000 * JumlahMangga
             total.append(TotalMangga)
             tanya()
+        else:
+            print("Maaf barang buah tersedia.")
     elif kode == 3:
         print()
         print("Silahkan pilih ikan yang Anda inginkan!")
@@ -99,6 +103,8 @@ def daftar_barang():
             TotalIkanKakap = 90000 * JumlahIkanKakap
             total.append(TotalIkanKakap)
             tanya()
+        else:
+            print("Maaf ikan belum tersedia.")
     elif kode == 4:
         print()
         print("Silahkan pilih ayam yang Anda inginkan!")
@@ -123,6 +129,8 @@ def daftar_barang():
             TotalAyamKampung = 45000 * JumlahAyamKampung
             total.append(TotalAyamKampung)
             tanya()
+        else:
+            print("Maaf ayam belum tersedia.")
     elif kode == 5:
         print()
         print("Silahkan pilih sembako yang Anda inginkan!")
@@ -142,8 +150,10 @@ def daftar_barang():
             total.append(TotalTelur)
             tanya()
             return
-
-
+        else:
+            print("Maaf sembako belum tersedia.")
+    else:
+        print("Maaf barang belum tersedia.")
 def tanya():
     print("\n--------------------------------------------------")
     tanya = input("Ingin tambah barang? [y/t] : ")
