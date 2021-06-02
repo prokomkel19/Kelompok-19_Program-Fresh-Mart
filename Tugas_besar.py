@@ -11,11 +11,13 @@ print("\n-------------------------------------")
 print("Selamat berbelanja di Fresh Mart.")
 print("Mohon isi data di bawah ini.")
 nama = input("Nama     : ")
+alamat = input("Alamat   : ")
 no_hp = input("No hp    : ")
 if len(no_hp) != 10 and len(no_hp) !=11:
     print("Maaf nomor handphone yang Anda masukkan tidak terdaftar.")
-alamat = input("Alamat   : ")
-print("\n--------------------------------------------------")
+    exit()
+else:
+    print("\n--------------------------------------------------")
 
 def daftar_barang():
     print("Berikut barang yang tersedia di toko Fresh Mart")
@@ -239,8 +241,9 @@ def akhir():
     print("     Detail Informasi Pembelian      ")
     print()
     print("Nama                 : ", nama)
-    print("No hp                : ", no_hp)
     print("Alamat Pengiriman    : ", alamat)
+    print("No hp                : ", no_hp)
+    
     print()
 
 daftar_barang()
