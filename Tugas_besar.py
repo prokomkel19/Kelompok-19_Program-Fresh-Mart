@@ -7,17 +7,22 @@ print("       WE DELIVER YOUR NEEDS!         ")
 
 total = []
 
-print("\n-------------------------------------")
-print("Selamat berbelanja di Fresh Mart.")
-print("Mohon isi data di bawah ini.")
-nama = input("Nama     : ")
-alamat = input("Alamat   : ")
-no_hp = input("No hp    : ")
-if len(no_hp) != 10 and len(no_hp) !=11:
-    print("Maaf nomor handphone yang Anda masukkan tidak terdaftar.")
-    exit()
-else:
-    print("\n--------------------------------------------------")
+def pembeli():
+    global nama
+    global alamat
+    global no_hp
+    print("\n-------------------------------------")
+    print("Selamat berbelanja di Fresh Mart.")
+    print("Mohon isi data di bawah ini.")
+    nama = input("Nama     : ")
+    alamat = input("Alamat   : ")
+    no_hp = input("No hp    : ")
+    if len(no_hp) != 10 and len(no_hp) !=11:
+        print("Maaf nomor handphone yang Anda masukkan tidak terdaftar.")
+        print("Silahkan masukkan data Anda dengan benar untuk melanjutkan transaksi.")
+        pembeli()
+    else:
+        print("\n--------------------------------------------------")
 
 def daftar_barang():
     print("Berikut barang yang tersedia di toko Fresh Mart")
@@ -249,7 +254,7 @@ def akhir():
     
     print()
 
-daftar_barang()
+pembeli()
 
 
 
