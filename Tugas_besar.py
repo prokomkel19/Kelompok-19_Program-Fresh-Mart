@@ -156,7 +156,12 @@ def daftar_barang():
         else:
             print("Maaf sembako belum tersedia.")
     else:
-        print("Maaf barang belum tersedia.")
+        print("Maaf barang belum tersedia. Silahkan pilih barang yang tersedia.\n")
+        daftar_barang()
+        
+daftar_barang()        
+       
+        
 def tanya():
     print("\n--------------------------------------------------")
     tanya = input("Ingin tambah barang? [y/t] : ")
