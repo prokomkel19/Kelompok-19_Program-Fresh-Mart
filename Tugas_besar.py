@@ -157,9 +157,7 @@ def daftar_barang():
             print("Maaf sembako belum tersedia.")
     else:
         print("Maaf barang belum tersedia. Silahkan pilih barang yang tersedia.\n")
-        daftar_barang()
-        
-daftar_barang()        
+        daftar_barang()       
        
         
 def tanya():
