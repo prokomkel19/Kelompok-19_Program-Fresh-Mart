@@ -195,16 +195,33 @@ def tanya():
     if tanya == "y":
         daftar_barang()
     elif tanya == "t":
-        harga()
+        pesanan()
     else:
         print("Pilihan yang anda masukan salah!")
-        print(input("Anda harus memilih antara y/t : "))
+        tanya()
 
+        
+def pesanan():
+    print("Berikut adalah daftar pesanan Anda:")
+    print("Sayur    : ", Sayur)
+    print("Buah     : ", Buah)
+    print("Ikan     : ", Ikan)
+    print("Ayam     : ", Ayam)
+    print("Sembako  : ", Sembako)
+    Cek = input("Apakah pesanan Anda sudah benar? [y/t] : ")
+    if Cek == "y":
+        harga()
+    elif Cek == "t":
+        daftar_barang()
+    else :
+        print("Pilihan yang anda masukan salah!")
+        pesanan()        
 
+        
 def harga():
     print("\n")
     harga = sum(total)
-    print("Total pembelian :", harga)
+    print("Total pembelian : Rp ", harga)
     metode_pengiriman()
 
 
@@ -224,16 +241,8 @@ def metode_pengiriman():
         metode_pembayaran()
     else:
         print("Maaf metode pengiriman belum tersedia.")
-        KodeKirim = int(input("Anda harus memilih antara 1/2 : "))
-        if KodeKirim == 1:
-            print("Anda akan dihubungi oleh kurir Paxel")
-            metode_pembayaran()
-        elif KodePengiriman == 2:
-            print("Anda akan dihubungi oleh kurir Gosend")
-            metode_pembayaran()
-        else:
-            print("Maaf metode pengiriman belum tersedia.")
-            metode_pengiriman()
+        print("Anda harus memilih metode pengiriman yang tersedia.")
+        metode_pengiriman()
 
 
 def metode_pembayaran():
@@ -252,16 +261,8 @@ def metode_pembayaran():
         akhir()
     else:
         print("Maaf metode pembayaran belum tersedia.")
-        KodeBayar = int(input("Anda harus memilih antara 1/2 : "))
-        if KodeBayar == 1:
-            print("Silahkan transfer ke 0329009779")
-            akhir()
-        elif KodeBayar == 2:
-            print("Silahkan transfer ke 0825333123")
-            akhir()
-        else:
-            print("Maaf metode pembayaran belum tersedia.")
-            metode_pembayaran()
+        print("Anda harus memilih metode pengiriman yang tersedia.")
+        metode_pembayaran()
 
 
 def akhir():
