@@ -23,6 +23,7 @@ def pembeli():
         pembeli()
     else:
         print("\n--------------------------------------------------")
+        daftar_barang()
 
 def daftar_barang():
     print("Berikut barang yang tersedia di toko Fresh Mart")
