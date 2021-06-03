@@ -89,7 +89,7 @@ def daftar_barang():
             total.append(TotalApel)
             tanya()
         elif KodeBuah == 2:
-             Buah = "Jeruk"
+            Buah = "Jeruk"
             JumlahJeruk = int(input("Masukkan jumlah jeruk (kg) : "))
             TotalJeruk = 15000 * JumlahJeruk
             total.append(TotalJeruk)
@@ -118,13 +118,13 @@ def daftar_barang():
             total.append(TotalIkanGurame)
             tanya()
         elif KodeIkan == 2:
-             Ikan = "Nila"
+            Ikan = "Nila"
             JumlahIkanNila = int(input("Masukkan jumlah Ikan Nila (kg) : "))
             TotalIkanNila = 27000 * JumlahIkanNila
             total.append(TotalIkanNila)
             tanya()
         elif KodeIkan == 3:
-             Ikan = "Kakap"
+            Ikan = "Kakap"
             JumlahIkanKakap = int(input("Masukkan jumlah Ikan Kakap (kg) : "))
             TotalIkanKakap = 90000 * JumlahIkanKakap
             total.append(TotalIkanKakap)
@@ -153,7 +153,7 @@ def daftar_barang():
             total.append(TotalAyamBoiler)
             tanya()
         elif KodeAyam == 3:
-             Ayam = "Ayam Kampung"
+            Ayam = "Ayam Kampung"
             JumlahAyamKampung = int(input("Masukkan jumlah Ayam Kampung (kg) : "))
             TotalAyamKampung = 45000 * JumlahAyamKampung
             total.append(TotalAyamKampung)
