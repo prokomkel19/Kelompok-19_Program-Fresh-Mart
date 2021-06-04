@@ -227,24 +227,42 @@ def tanya():
         daftar_barang()
     elif tanya == "t":
         pesanan()
+        cek_pesanan()
     else:
         print("Pilihan yang anda masukan salah!")
         tanya()
 
-        
+
 def pesanan():
     print("Berikut adalah daftar pesanan Anda:")
-    print("Sayur    : ", Sayur)
-    print("Buah     : ", Buah)
-    print("Ikan     : ", Ikan)
-    print("Ayam     : ", Ayam)
-    print("Sembako  : ", Sembako)
+    if Sayur:
+        print("Sayur    :")
+        for i in Sayur:
+            print(i)
+    if Buah:
+        print("Buah     : ")
+        for i in Buah:
+            print(i)
+    if Ikan:
+        print("Ikan     : ")
+        for i in Ikan:
+            print(i)
+    if Ayam:
+        print("Ayam     : ")
+        for i in Ayam:
+            print(i)
+    if Sembako:
+        print("Sembako  : ")
+        for i in Sembako:
+            print(i)
+
+def cek_pesanan():
     Cek = input("Apakah pesanan Anda sudah benar? [y/t] : ")
     if Cek == "y":
         harga()
     elif Cek == "t":
         daftar_barang()
-    else :
+    else:
         print("Pilihan yang anda masukan salah!")
         pesanan()        
 
