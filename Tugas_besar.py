@@ -49,163 +49,176 @@ def daftar_barang():
     global Ikan
     global Ayam
     global Sembako
+    index = 1
+    lst_barang = list(data.keys())
     print("Berikut barang yang tersedia di toko Fresh Mart")
     print(" Kode | Nama Barang ")
     print("--------------------------------------------------")
-    print(" 1    | Sayur       ")
-    print(" 2    | Buah        ")
-    print(" 3    | Ikan        ")
-    print(" 4    | Ayam        ")
-    print(" 5    | Sembako     ")
+    for i in range(len(lst_barang)-2):
+        print(f" {i+1:<4} | {lst_barang[i]:<15}")
     print("--------------------------------------------------")
     kode = int(input("Masukkan kode barang  : "))
     if kode == 1:
         print()
         print("Silahkan pilih sayur yang Anda inginkan!")
-        print(" Kode | Nama Sayur    | Harga ")
+        print(" Kode | Nama Sayur      | Harga")
         print("--------------------------------------------------")
-        print(" 1    | Wortel        | 20000 ")
-        print(" 2    | Kentang       | 18000 ")
-        print(" 3    | Bawang bombay | 28000 ")
+        for i in data["Sayur"]:
+            nama = i["Nama"]
+            harga = i["Harga"]
+            print(f" {index:<4} | {nama:<15} | {harga:<15}")
+            index += 1
         KodeSayur = int(input("Masukkan kode sayur: "))
         if KodeSayur == 1:
-            global JumlahWortel
-            Sayur = "Wortel"
             JumlahWortel = int(input("Masukkan jumlah wortel (kg) : "))
             TotalWortel = 20000 * JumlahWortel
+            Sayur.append(f"- Wortel sebanyak {JumlahWortel} kg seharga Rp{TotalWortel}")
             total.append(TotalWortel)
             tanya()
         elif KodeSayur == 2:
-            global JumlahKentang
-            Sayur = "Kentang"
             JumlahKentang = int(input("Masukkan jumlah kentang (kg) : "))
             TotalKentang = 18000 * JumlahKentang
+            Sayur.append(f"- Kentang sebanyak {JumlahKentang} kg seharga Rp{TotalKentang}")
             total.append(TotalKentang)
             tanya()
         elif KodeSayur == 3:
-            global JumlahBawangBombay
-            Sayur = "Bawang bombay"
-            JumlahBawangbomay = int(input("Masukkan jumlah bawang bombay (kg) : "))
-            TotalBawangbombay = 28000 * JumlahBawangbomay
+            JumlahBawangbombay = int(input("Masukkan jumlah bawang bombay (kg) : "))
+            TotalBawangbombay = 28000 * JumlahBawangbombay
+            Sayur.append(f"- Bawang bombay sebanyak {JumlahBawangbombay} kg seharga Rp{TotalBawangbombay}")
             total.append(TotalBawangbombay)
             tanya()
         else:
             print("Maaf sayur belum tersedia.")
+            daftar_barang()
     elif kode == 2:
         print()
         print("Silahkan pilih buah yang Anda inginkan!")
-        print(" Kode | Nama Buah   | Harga ")
+        print(" Kode | Nama Buah       | Harga")
         print("--------------------------------------------------")
-        print(" 1    | Apel        | 40000")
-        print(" 2    | Jeruk       | 15000")
-        print(" 3    | Mangga      | 30000")
+        for i in data["Buah"]:
+            nama = i["Nama"]
+            harga = i["Harga"]
+            print(f" {index:<4} | {nama:<15} | {harga:<15}")
+            index += 1
         KodeBuah = int(input("Masukkan kode buah: "))
         if KodeBuah == 1:
-            Buah = "Apel"
             JumlahApel = int(input("Masukkan jumlah apel (kg) : "))
             TotalApel = 40000 * JumlahApel
+            Buah.append(f"- Apel sebanyak {JumlahApel} kg seharga Rp{TotalApel}")
             total.append(TotalApel)
             tanya()
         elif KodeBuah == 2:
-            Buah = "Jeruk"
             JumlahJeruk = int(input("Masukkan jumlah jeruk (kg) : "))
             TotalJeruk = 15000 * JumlahJeruk
+            Buah.append(f"- Jeruk sebanyak {JumlahJeruk} kg seharga Rp{TotalJeruk}")
             total.append(TotalJeruk)
             tanya()
         elif KodeBuah == 3:
-            Buah = "Mangga"
             JumlahMangga = int(input("Masukkan jumlah mangga (kg) : "))
             TotalMangga = 30000 * JumlahMangga
+            Buah.append(f"- Mangga sebanyak {JumlahMangga} kg seharga Rp{TotalMangga}")
             total.append(TotalMangga)
             tanya()
         else:
             print("Maaf barang buah tersedia.")
+            daftar_barang()
     elif kode == 3:
         print()
         print("Silahkan pilih ikan yang Anda inginkan!")
-        print(" Kode | Nama Ikan   | Harga ")
+        print(" Kode | Nama Ikan       | Harga")
         print("--------------------------------------------------")
-        print(" 1    | Ikan Gurame | 60000")
-        print(" 2    | Ikan Nila   | 27000")
-        print(" 3    | Ikan Kakap  | 90000")
+        for i in data["Ikan"]:
+            nama = i["Nama"]
+            harga = i["Harga"]
+            print(f" {index:<4} | {nama:<15} | {harga:<15}")
+            index += 1
         KodeIkan = int(input("Masukkan kode ikan: "))
         if KodeIkan == 1:
-            Ikan = "Gurame"
             JumlahIkanGurame = int(input("Masukkan jumlah Ikan Gurame (kg) : "))
             TotalIkanGurame = 60000 * JumlahIkanGurame
+            Ikan.append(f"- Ikan Gurame sebanyak {JumlahIkanGurame} kg seharga Rp{TotalIkanGurame}")
             total.append(TotalIkanGurame)
             tanya()
         elif KodeIkan == 2:
-            Ikan = "Nila"
             JumlahIkanNila = int(input("Masukkan jumlah Ikan Nila (kg) : "))
             TotalIkanNila = 27000 * JumlahIkanNila
+            Ikan.append(f"- Ikan Nila sebanyak {JumlahIkanNila} kg seharga Rp{TotalIkanNila}")
             total.append(TotalIkanNila)
             tanya()
         elif KodeIkan == 3:
-            Ikan = "Kakap"
             JumlahIkanKakap = int(input("Masukkan jumlah Ikan Kakap (kg) : "))
             TotalIkanKakap = 90000 * JumlahIkanKakap
+            Ikan.append(f"- Ikan Kakap sebanyak {JumlahIkanKakap} kg seharga Rp{TotalIkanKakap}")
             total.append(TotalIkanKakap)
             tanya()
         else:
             print("Maaf ikan belum tersedia.")
+            daftar_barang()
     elif kode == 4:
         print()
         print("Silahkan pilih ayam yang Anda inginkan!")
-        print(" Kode | Nama Ayam     | Harga ")
+        print(" Kode | Nama Ayam       | Harga")
         print("--------------------------------------------------")
-        print(" 1    | Ayam Pejantan | 40000")
-        print(" 2    | Ayam Boiler   | 35000")
-        print(" 3    | Ayam Kampung  | 45000")
+        for i in data["Ayam"]:
+            nama = i["Nama"]
+            harga = i["Harga"]
+            print(f" {index:<4} | {nama:<15} | {harga:<15}")
+            index += 1
         KodeAyam = int(input("Masukkan kode ayam: "))
         if KodeAyam == 1:
-            Ayam = "Ayam Pejantan"
             JumlahAyamPejantan = int(input("Masukkan jumlah Ayam Pejantan (kg) : "))
             TotalAyamPejantan = 40000 * JumlahAyamPejantan
+            Ayam.append(f"- Ayam Pejantan sebanyak {JumlahAyamPejantan} kg seharga Rp{TotalAyamPejantan}")
             total.append(TotalAyamPejantan)
             tanya()
         elif KodeAyam == 2:
-            Ayam = "Ayam Boiler"
             JumlahAyamBoiler = int(input("Masukkan jumlah Ayam Boiler (kg) : "))
             TotalAyamBoiler = 35000 * JumlahAyamBoiler
+            Ayam.append(f"- Ayam Boiler sebanyak {JumlahAyamBoiler} kg seharga Rp{TotalAyamBoiler}")
             total.append(TotalAyamBoiler)
             tanya()
         elif KodeAyam == 3:
             Ayam = "Ayam Kampung"
             JumlahAyamKampung = int(input("Masukkan jumlah Ayam Kampung (kg) : "))
             TotalAyamKampung = 45000 * JumlahAyamKampung
+            Ayam.append(f"- Ayam Kampung sebanyak {JumlahAyamKampung} kg seharga Rp{TotalAyamKampung}")
             total.append(TotalAyamKampung)
             tanya()
         else:
             print("Maaf ayam belum tersedia.")
+            daftar_barang()
     elif kode == 5:
         print()
         print("Silahkan pilih sembako yang Anda inginkan!")
-        print(" Kode | Nama Sembako  | Harga ")
+        print(" Kode | Nama Sembako     | Harga")
         print("--------------------------------------------------")
-        print(" 1    | Beras         | 10500")
-        print(" 2    | Telur         | 28000")
+        for i in data["Sembako"]:
+            nama = i["Nama"]
+            harga = i["Harga"]
+            print(f" {index:<4} | {nama:<15} | {harga:<15}")
+            index += 1
         KodeSembako = int(input("Masukkan kode sembako: "))
         if KodeSembako == 1:
-            Sembako = "Beras"
             JumlahBeras = int(input("Masukkan jumlah Beras (kg) : "))
             TotalBeras = 10500 * JumlahBeras
+            Sembako.append(f"- Beras sebanyak {JumlahBeras} kg seharga Rp{TotalBeras}")
             total.append(TotalBeras)
             tanya()
         elif KodeSembako == 2:
-            Sembako = "Telur"
             JumlahTelur = int(input("Masukkan jumlah Telur (kg) : "))
             TotalTelur = 28000 * JumlahTelur
+            Sembako.append(f"- Telur sebanyak {JumlahTelur} kg seharga Rp{TotalTelur}")
             total.append(TotalTelur)
             tanya()
             return
         else:
             print("Maaf sembako belum tersedia.")
+            daftar_barang()
     else:
         print("Maaf barang belum tersedia. Silahkan pilih barang yang tersedia.\n")
-        daftar_barang()       
-       
-        
+        daftar_barang()
+
+
 def tanya():
     print("\n--------------------------------------------------")
     tanya = input("Ingin tambah barang? [y/t] : ")
