@@ -266,8 +266,8 @@ def cek_pesanan():
         print("Pilihan yang anda masukan salah!")
         pesanan()        
 
-        
 def harga():
+    global harga
     print("\n")
     harga = sum(total)
     print("Total pembelian : Rp ", harga)
@@ -275,24 +275,29 @@ def harga():
 
 
 def metode_pengiriman():
+    global MetodePengiriman
+    index = 1
     print("\n--------------------------------------------------")
     print("Silahkan memilih metode pengiriman yang tersedia.")
     print(" Kode | Metode Pengiriman ")
     print("--------------------------------------------------")
-    print(" 1    | Paxel             ")
-    print(" 2    | Gosend            ")
+    for i in data["Metode Pengiriman"]:
+        print(f" {index:<4} | {i:<15}")
+        index += 1
     KodePengiriman = int(input("Masukkan kode metode pengiriman : "))
     if KodePengiriman == 1:
+        MetodePengiriman = "Paxel"
         print("Anda akan dihubungi oleh kurir Paxel")
         metode_pembayaran()
+
     elif KodePengiriman == 2:
+        MetodePengiriman = "Gosend"
         print("Anda akan dihubungi oleh kurir Gosend")
         metode_pembayaran()
     else:
         print("Maaf metode pengiriman belum tersedia.")
         print("Anda harus memilih metode pengiriman yang tersedia.")
         metode_pengiriman()
-
 
 def metode_pembayaran():
     print("\n--------------------------------------------------")
