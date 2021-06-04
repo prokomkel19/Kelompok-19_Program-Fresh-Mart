@@ -299,25 +299,30 @@ def metode_pengiriman():
         print("Anda harus memilih metode pengiriman yang tersedia.")
         metode_pengiriman()
 
+
 def metode_pembayaran():
+    global MetodePembayaran
+    index = 1
     print("\n--------------------------------------------------")
     print("Silahkan memilih metode pembayaran yang tersedia.")
     print(" Kode | Metode Pembayaran  ")
     print("--------------------------------------------------")
-    print(" 1    | BCA                ")
-    print(" 2    | GoPay              ")
+    for i in data["Metode Pembayaran"]:
+        print(f" {index:<4} | {i:<15}")
+        index += 1
     KodePembayaran = int(input("Masukkan kode metode pembayaran : "))
     if KodePembayaran == 1:
+        MetodePembayaran = "BCA"
         print("Silahkan transfer ke 0329009779")
         akhir()
     elif KodePembayaran == 2:
+        MetodePembayaran = "GoPay"
         print("Silahkan transfer ke 0825333123")
         akhir()
     else:
         print("Maaf metode pembayaran belum tersedia.")
-        print("Anda harus memilih metode pengiriman yang tersedia.")
+        print("Anda harus memilih metode pembayaran yang tersedia.")
         metode_pembayaran()
-
 
 def akhir():
     print("\n\n-------------------------------------")
@@ -329,11 +334,13 @@ def akhir():
     print("Nama                 : ", nama)
     print("Alamat Pengiriman    : ", alamat)
     print("No hp                : ", no_hp)
-    
-    print()
+    print("--------------------------------------")
+    pesanan()
+    print("--------------------------------------")
+    print("Total                :  Rp", harga)
+    print("Metode Pengiriman    : ", MetodePengiriman)
+    print("Metode Pembayaran    : ", MetodePembayaran)
+    print("\nTerima kasih sudah berbelanja di Fresh Mart.")
+
 
 pembeli()
-
-
-
-
