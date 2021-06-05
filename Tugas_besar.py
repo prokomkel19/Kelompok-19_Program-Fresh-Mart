@@ -1,4 +1,6 @@
 #KELOMPOK 19
+import json
+
 print("=====================================")
 print("         PROGRAM FRESH MART          ")
 print("-------------------------------------")
@@ -6,6 +8,20 @@ print("Meneyediakan berbagai kebutuhan anda!")
 print("       WE DELIVER YOUR NEEDS!         ")
 
 total = []
+Sayur = []
+Buah = []
+Ikan = []
+Ayam = []
+Sembako = []
+
+
+def read_data():
+    global data
+    f = open('List Barang.json')
+    data = json.load(f)
+
+    f.close()
+
 
 def pembeli():
     global nama
@@ -22,8 +38,10 @@ def pembeli():
         print("Silahkan masukkan data Anda dengan benar untuk melanjutkan transaksi.")
         pembeli()
     else:
+        read_data()
         print("\n--------------------------------------------------")
         daftar_barang()
+
 
 def daftar_barang():
     global Sayur
