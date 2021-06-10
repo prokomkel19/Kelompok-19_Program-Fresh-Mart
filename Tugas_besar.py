@@ -329,6 +329,10 @@ def akhir():
     print("=====================================")
     print("         PROGRAM FRESH MART          ")
     print("=====================================")
+    import datetime
+
+    x = datetime.datetime.now()
+    print(                x                     )
     print("     Detail Informasi Pembelian      ")
     print()
     print("Nama                 : ", nama)
