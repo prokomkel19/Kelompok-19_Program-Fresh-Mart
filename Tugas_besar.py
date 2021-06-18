@@ -236,7 +236,9 @@ def daftar_barang():
 
 
 def tanya():
+    # berfungsi untuk menawarkan customer jika ingin menambah belanja.
     print("\n--------------------------------------------------")
+    # customer memasukkan keterangan tambah barang (y/t).
     tanya = input("Ingin tambah barang? [y/t] : ")
     print("--------------------------------------------------")
     if tanya == "y":
@@ -245,11 +247,13 @@ def tanya():
         pesanan()
         cek_pesanan()
     else:
+        # ketika customer salah memasukkan kode tanya (selain y dan t).
         print("Pilihan yang anda masukan salah!")
         tanya()
 
 
 def pesanan():
+    # berfungsi untuk menampilkan seluruh pesanan yang telah dimasukkan oleh customer.
     print("Berikut adalah daftar pesanan Anda:")
     if Sayur:
         print("Sayur    :")
@@ -273,6 +277,8 @@ def pesanan():
             print(i)
 
 def cek_pesanan():
+    # berfungsi untuk memastikan data pesanan yang telah dimasukkan oleh customer benar.
+    # customer memasukkan keterangan pengecekan pesanan (y/t).
     Cek = input("Apakah pesanan Anda sudah benar? [y/t] : ")
     if Cek == "y":
         harga()
@@ -280,9 +286,10 @@ def cek_pesanan():
         daftar_barang()
     else:
         print("Pilihan yang anda masukan salah!")
-        pesanan()        
+        pesanan()
 
 def harga():
+    # berfungsi untuk menghitung dan menampilkan total biaya yang harus dibayarkan oleh customer.
     global harga
     print("\n")
     harga = sum(total)
@@ -291,6 +298,7 @@ def harga():
 
 
 def metode_pengiriman():
+    # program akan menawarkan 2 metode pengiriman.
     global MetodePengiriman
     index = 1
     print("\n--------------------------------------------------")
@@ -300,23 +308,25 @@ def metode_pengiriman():
     for i in data["Metode Pengiriman"]:
         print(f" {index:<4} | {i:<15}")
         index += 1
+    # customer memasukkan kode pengiriman.
     KodePengiriman = int(input("Masukkan kode metode pengiriman : "))
     if KodePengiriman == 1:
         MetodePengiriman = "Paxel"
         print("Anda akan dihubungi oleh kurir Paxel")
         metode_pembayaran()
-
     elif KodePengiriman == 2:
         MetodePengiriman = "Gosend"
         print("Anda akan dihubungi oleh kurir Gosend")
         metode_pembayaran()
     else:
+        # ketika customer salah menginputkan kode pengiriman (selain angka 1 dan 2).
         print("Maaf metode pengiriman belum tersedia.")
         print("Anda harus memilih metode pengiriman yang tersedia.")
         metode_pengiriman()
 
 
 def metode_pembayaran():
+    # program akan menawarkan 2 metode pembayaran.
     global MetodePembayaran
     index = 1
     print("\n--------------------------------------------------")
@@ -326,6 +336,7 @@ def metode_pembayaran():
     for i in data["Metode Pembayaran"]:
         print(f" {index:<4} | {i:<15}")
         index += 1
+    # customer memasukkan kode pembayaran.
     KodePembayaran = int(input("Masukkan kode metode pembayaran : "))
     if KodePembayaran == 1:
         MetodePembayaran = "BCA"
@@ -336,18 +347,22 @@ def metode_pembayaran():
         print("Silahkan transfer ke 0825333123")
         akhir()
     else:
+        # ketika customer salah menginputkan kode pembayaran (selain angka 1 dan 2).
         print("Maaf metode pembayaran belum tersedia.")
         print("Anda harus memilih metode pembayaran yang tersedia.")
         metode_pembayaran()
 
 def akhir():
+    # masuk bagian kwitansi pembayaran.
     print("\n\n-------------------------------------")
     print("=====================================")
     print("         PROGRAM FRESH MART          ")
     print("=====================================")
-    import datetime
 
-    x = datetime.datetime.now()
+    # mencantumkan waktu pelanggan memesan.
+    import time
+    x = time.ctime()
+
     print(                x                     )
     print("     Detail Informasi Pembelian      ")
     print()
