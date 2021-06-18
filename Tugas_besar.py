@@ -1,6 +1,7 @@
 #KELOMPOK 19
 import json
 
+# program menampilkan tampilan awal
 print("=====================================")
 print("         PROGRAM FRESH MART          ")
 print("-------------------------------------")
@@ -16,6 +17,7 @@ Sembako = []
 
 
 def read_data():
+    # berfungsi untuk membaca data pada file 'List Barang.json'.
     global data
     f = open('List Barang.json')
     data = json.load(f)
@@ -30,10 +32,12 @@ def pembeli():
     print("\n-------------------------------------")
     print("Selamat berbelanja di Fresh Mart.")
     print("Mohon isi data di bawah ini.")
+    # customer memasukkan nama, alamat, dan no hp.
     nama = input("Nama     : ")
     alamat = input("Alamat   : ")
     no_hp = input("No hp    : ")
     if len(no_hp) != 10 and len(no_hp) !=11:
+        # ketika no hp tidak sama dengan 10/11 digit maka customer akan diminta untuk mengisi ulang.
         print("Maaf nomor handphone yang Anda masukkan tidak terdaftar.")
         print("Silahkan masukkan data Anda dengan benar untuk melanjutkan transaksi.")
         pembeli()
@@ -57,6 +61,7 @@ def daftar_barang():
     for i in range(len(lst_barang)-2):
         print(f" {i+1:<4} | {lst_barang[i]:<15}")
     print("--------------------------------------------------")
+    # customer memasukkan kode barang yang ingin dibeli.
     kode = int(input("Masukkan kode barang  : "))
     if kode == 1:
         print()
@@ -68,6 +73,7 @@ def daftar_barang():
             harga = i["Harga"]
             print(f" {index:<4} | {nama:<15} | {harga:<15}")
             index += 1
+        # Customer memasukkan kode sayur yang ingin dibeli.
         KodeSayur = int(input("Masukkan kode sayur: "))
         if KodeSayur == 1:
             JumlahWortel = int(input("Masukkan jumlah wortel (kg) : "))
@@ -88,6 +94,7 @@ def daftar_barang():
             total.append(TotalBawangbombay)
             tanya()
         else:
+            # ketika customer salah memasukkan kode sayur (selain angka 1-3).
             print("Maaf sayur belum tersedia.")
             daftar_barang()
     elif kode == 2:
@@ -100,6 +107,7 @@ def daftar_barang():
             harga = i["Harga"]
             print(f" {index:<4} | {nama:<15} | {harga:<15}")
             index += 1
+        # customer memasukkan kode buah yang ingin dibeli.
         KodeBuah = int(input("Masukkan kode buah: "))
         if KodeBuah == 1:
             JumlahApel = int(input("Masukkan jumlah apel (kg) : "))
@@ -120,6 +128,7 @@ def daftar_barang():
             total.append(TotalMangga)
             tanya()
         else:
+            # ketika customer salah memasukkan kode buah (selain angka 1-3).
             print("Maaf barang buah tersedia.")
             daftar_barang()
     elif kode == 3:
@@ -132,6 +141,7 @@ def daftar_barang():
             harga = i["Harga"]
             print(f" {index:<4} | {nama:<15} | {harga:<15}")
             index += 1
+        # customer memasukkan kode ikan yang ingin dibeli.
         KodeIkan = int(input("Masukkan kode ikan: "))
         if KodeIkan == 1:
             JumlahIkanGurame = int(input("Masukkan jumlah Ikan Gurame (kg) : "))
@@ -152,6 +162,7 @@ def daftar_barang():
             total.append(TotalIkanKakap)
             tanya()
         else:
+            # ketika customer salah memasukkan kode ikan (selain angka 1-3).
             print("Maaf ikan belum tersedia.")
             daftar_barang()
     elif kode == 4:
@@ -164,6 +175,7 @@ def daftar_barang():
             harga = i["Harga"]
             print(f" {index:<4} | {nama:<15} | {harga:<15}")
             index += 1
+        # customer memasukkan kode ayam yang ingin dibeli.
         KodeAyam = int(input("Masukkan kode ayam: "))
         if KodeAyam == 1:
             JumlahAyamPejantan = int(input("Masukkan jumlah Ayam Pejantan (kg) : "))
@@ -185,6 +197,7 @@ def daftar_barang():
             total.append(TotalAyamKampung)
             tanya()
         else:
+            # ketika customer salah memasukkan kode ayam (selain angka 1-3).
             print("Maaf ayam belum tersedia.")
             daftar_barang()
     elif kode == 5:
@@ -197,6 +210,7 @@ def daftar_barang():
             harga = i["Harga"]
             print(f" {index:<4} | {nama:<15} | {harga:<15}")
             index += 1
+        # customer memasukkan kode sembako yang ingin dibeli.
         KodeSembako = int(input("Masukkan kode sembako: "))
         if KodeSembako == 1:
             JumlahBeras = int(input("Masukkan jumlah Beras (kg) : "))
@@ -212,9 +226,11 @@ def daftar_barang():
             tanya()
             return
         else:
+            # ketika customer salah memasukkan kode sembako (selain angka 1-2).
             print("Maaf sembako belum tersedia.")
             daftar_barang()
     else:
+        # ketika customer salah memasukkan kode barang (selain angka 1-5).
         print("Maaf barang belum tersedia. Silahkan pilih barang yang tersedia.\n")
         daftar_barang()
 
